@@ -1,5 +1,12 @@
 @extends('layouts.app')
 @section('content')
+<style>
+
+    .btn-highliter{
+        transition: all 1s;
+    }
+
+</style>
 <main class="w-full h-full">
     <h1 class="absolute font-bold m-6">WorPro</h1>
     <div class="flex items-end justify-center">
@@ -20,15 +27,26 @@
 
     </div>
     <div class="absolute bottom-24 flex items-center p-2 rounded-3xl gap-4" style="background-color: #f2f2f2;left: 60%;">
-        <div class="absolute bg-black text-white rounded-3xl px-6 z-0 py-1">
+        <div class="absolute bg-black text-white rounded-3xl px-6 z-0 py-1 btn-highliter">
             <button class="text-black">login</button>
         </div>
-        <div class=" px-6 z-0 py-1 z-10">
+        <div class=" px-6 z-0 py-1 z-10 login-btn">
             <button class="text-white">login</button>
         </div>
-        <div class=" px-6 z-0 py-1 z-10">
+        <div class=" px-6 z-0 py-1 z-10 register-btn">
             <button class="text-black">Register</button>
         </div>
     </div>
 </main>
+<script>
+    document.querySelector('.register-btn').addEventListener('click', e=>{
+        document.querySelector('.btn-highliter').style.right = '0';
+        document.querySelector('.btn-highliter').style.left = null;
+    });
+
+    document.querySelector('.login-btn').addEventListener('click', e=>{
+        document.querySelector('.btn-highliter').style.left = '0';
+        document.querySelector('.btn-highliter').style.right = null;
+    });
+</script>
 @endsection
