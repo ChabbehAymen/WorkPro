@@ -1,0 +1,20 @@
+
+body{
+    overflow: hidden;
+}
+
+form{
+    width: 55%;
+}
+
+.login-form{
+    bottom: 1.5rem;
+}
+
+.register-form{
+    left: -70rem;
+}
+
+.login{
+    color: white;
+}
