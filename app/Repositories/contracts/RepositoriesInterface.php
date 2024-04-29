@@ -7,7 +7,7 @@ interface RepositoriesInterface
     public function get();
 
     public function create(array $data);
-    public function find(int $id);
+    public function find($id);
 
     public function update(int $id, array $data);
 

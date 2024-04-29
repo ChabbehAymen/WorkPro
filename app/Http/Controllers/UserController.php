@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Repositories\UserRrepository;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -14,18 +18,28 @@ class UserController extends Controller
     }
     public function findUser(Request $request)
     {
-        return "Login in ....";
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials))
+            return redirect('main')->with('success','Signed In');
+        return back()->with('success','Login details are not valid');
     }
-    
+
     public function addUser(Request $request)
     {
-        $data = $request->validate([
-            'user_name'=>'required',
-            'email'=>'required',
-            'password'=>'required',
-            'profile_img'=>'unset'
+        $data = $request->validateWithBag('registration',[
+            'user_name'=>['bail','required','unique:users','max:30'],
+            'email'=>['bail','required','unique:users','max:50'],
+            'password'=>['required','max:30']
         ]);
         $this->repo->create($data);
         return back()->with('success', 'User Created Now Tray to Login');
+    }
+
+    public function logout(Request $request): RedirectResponse
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('auth');
     }
 }

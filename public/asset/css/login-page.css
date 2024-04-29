@@ -1,20 +1,32 @@
 
-body{
+body {
     overflow: hidden;
+
+    form {
+        width: 55%;
+    }
+
+    .login-form {
+        bottom: 1.5rem;
+    }
+
+    .register-form {
+        left: -70rem;
+    }
+
+    .login {
+        color: white;
+    }
+
+    .btn-container {
+        background-color: #f2f2f2;
+        left: 50%;
+    }
+    input:focus{
+        outline: none;
+    }
 }
 
-form{
-    width: 55%;
-}
 
-.login-form{
-    bottom: 1.5rem;
-}
 
-.register-form{
-    left: -70rem;
-}
 
-.login{
-    color: white;
-}
