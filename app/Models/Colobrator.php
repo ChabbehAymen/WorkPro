@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Colobrator extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'user_id',
+        'project_id'
+    ];
 }

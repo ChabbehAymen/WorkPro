@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('invetations', function (Blueprint $table) {
-            $table->id();
+            $table->foreignId('sender_id')->constrained();
+            $table->foreignId('receiver_id')->constrained();
+            $table->foreignId('project_id')->constrained();
             $table->timestamps();
         });
     }
