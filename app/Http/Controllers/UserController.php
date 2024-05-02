@@ -20,7 +20,7 @@ class UserController extends Controller
     {
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials))
-            return redirect('main')->with('success','Signed In');
+            return redirect('home')->with('success','Welcome Back');
         return back()->with('success','Login details are not valid');
     }
 

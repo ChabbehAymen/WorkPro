@@ -4,13 +4,13 @@ namespace App\Repositories\contracts;
 
 interface RepositoriesInterface
 {
-    public function get();
+    public function get($params = null);
 
     public function create(array $data);
-    public function find($id);
+    public function find($params);
 
-    public function update(int $id, array $data);
+    public function update($params, array $data);
 
-    public function delete(int $id);
+    public function delete($params);
 
 }

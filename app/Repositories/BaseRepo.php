@@ -14,7 +14,7 @@ class BaseRepo implements RepositoriesInterface
         $this->model = $model;
     }
 
-    public function get(): Collection|array
+    public function get($params = null): Collection|array
     {
         return $this->model->query()->get();
     }
@@ -23,21 +23,21 @@ class BaseRepo implements RepositoriesInterface
     {
         return $this->model->create($data);
     }
-    public function find($id)
+    public function find($params)
     {
-        return $this->model->find($id);
+        return $this->model->find($params);
     }
 
-    public function update($id, $data)
+    public function update($params, $data)
     {
-        $element = $this->model->find($id);
+        $element = $this->model->find($params);
         if (!$element) return false;
         return $element->update($data);
     }
 
-    public function delete($id)
+    public function delete($params)
     {
-        $element = $this->model->find($id);
+        $element = $this->model->find($params);
         if (!$element) return false;
         return $element->delete();
     }

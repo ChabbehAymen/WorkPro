@@ -12,4 +12,14 @@ class Colobrator extends Model
         'user_id',
         'project_id'
     ];
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
+
+    public function projects()
+    {
+        return $this->belongsTo(Project::class);
+    }
 }

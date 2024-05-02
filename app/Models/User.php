@@ -23,6 +23,33 @@ class User extends Authenticatable
         'profile_img'
     ];
 
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
+
+    public function colobrator()
+    {
+        return $this->belongsToMany(Colobrator::class);
+    }
+
+    public function invetation()
+    {
+        return $this->belongsToMany(Invetation::class);
+    }
+
+    public function assignment()
+    {
+        return $this->belongsToMany(Assignment::class);
+    }
+
+
+
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -19,7 +19,6 @@
                                 <form class="absolute shadow-lg border rounded px-6 py-14 h-max ml-36 flex flex-column login-form"
                                       method="POST" action="{{route('login')}}">
                                     @csrf
-                                    @method('POST')
                                     <p class="font-light mb-4">Welcome!</p>
                                     <h1 class="font-bold text-2xl mb-6">Sign in</h1>
                                     <label for="">User Email</label>

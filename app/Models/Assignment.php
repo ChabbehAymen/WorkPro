@@ -12,4 +12,14 @@ class Assignment extends Model
         'collaborator',
         'task_id'
     ];
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
+
+    public function tasks()
+    {
+        return $this->hasOne(Task::class);
+    }
 }
