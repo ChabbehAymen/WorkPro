@@ -1,14 +1,24 @@
 const popup = $('#createProjectPopup');
-
-$('#create-btn').click(event =>{
-    showCreateProjectPopup()
-})
 $('#create-icon').click(event=>{
     showCreateProjectPopup()
 })
 $('#cancel-popup').click(event=>{
     hideCreateProjectPopup()
 })
+
+$('input').on('input', event =>{
+    const projectsCards = $('.project-card');
+    const inputValue = event.target.value.toLowerCase();
+    projectsCards.each(function() {
+        console.log(this)
+        const cardTitle = $(this).find('h1').text().toLowerCase();
+        if (cardTitle.includes(inputValue)) {
+            $(this).css('display', 'block');
+        } else {
+            $(this).css('display', 'none');
+        }
+    });
+});
 
 
 function showCreateProjectPopup() {

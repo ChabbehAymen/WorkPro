@@ -6,6 +6,7 @@ use App\Models\Colobrator;
 use App\Repositories\CollaborationsRepo;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CollaboratorController extends Controller
 {
@@ -15,6 +16,11 @@ class CollaboratorController extends Controller
     {
         $this->collabsRepo = new CollaborationsRepo(new Colobrator());
         $this->invitationsController = new InvitationsController();
+    }
+
+    public function get()
+    {
+        return $this->collabsRepo->get(Auth::id());
     }
 
     public function create($projectId, $userId)

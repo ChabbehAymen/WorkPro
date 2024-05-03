@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Http\Controllers\InvitationsController;
 use App\Models\Invetation;
 use App\Models\User;
 use Illuminate\Notifications\Notification;
@@ -19,15 +20,17 @@ class Header extends Component
 
     public $notifications;
 
+    private InvitationsController $invitationsController;
+
+    public function __construct()
+    {
+        $this->invitationsController = new InvitationsController();
+    }
+
     public function mount()
     {
         if ($this->withProfile!== null) $this->user = Auth::user();
-        $this->notifications = Invetation::query()
-            ->select('users.id As user_id','user_name', 'profile_img', 'projects.id', 'title')
-            ->join('users', 'sender_id', '=', 'users.id')
-            ->join('projects', 'project_id', '=', 'projects.id')
-            ->where('receiver_id', '=', Auth::id())
-            ->get();
+        $this->notifications = $this->invitationsController->get();
     }
     public function render()
     {

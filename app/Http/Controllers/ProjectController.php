@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Repositories\UserRrepository;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\Colobrator;
@@ -16,17 +18,20 @@ class ProjectController extends Controller
 {
     protected CollaborationsRepo $collaborationsRepo;
     protected ProjectRepository $projectsRepo;
+
+    protected $usersRepo;
     public function __construct()
     {
         $this->projectsRepo = new ProjectRepository(new Project());
         $this->collaborationsRepo = new CollaborationsRepo(new Colobrator());
+        $this->usersRepo = new UserRrepository(new User());
     }
 
     public function show(): view
     {
         $userProjects = $this->getUserProjects();
-         $collab=$this->getCollaborations();
-        return view('home', compact('userProjects', 'collab'));
+         $collaborations=$this->getCollaborations();
+        return view('home', compact('userProjects', 'collaborations'));
     }
 
     public function getCollaborations(): Collection|array{
@@ -46,7 +51,8 @@ class ProjectController extends Controller
         $userProjects = $this->getUserProjects();
         $collabs = $this->getCollaborations();
         $collabors = $this->projectsRepo->getCollaborators($id);
-        return view('main', compact('project', 'userProjects', 'collabs', 'collabors'));
+        $projectCreator = $project->user_id === Auth::id()?null:$this->usersRepo->find($project->user_id);
+        return view('main', compact('project', 'userProjects', 'collabs', 'collabors', 'projectCreator'));
     }
 
     public function destroy(Request $request, $id){

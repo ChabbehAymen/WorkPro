@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('links')
     <script src="{{asset('asset/js/home.page.js')}}" defer></script>
+    <link rel="stylesheet" href="{{asset('asset/css/home.page.css')}}">
 @endsection
 @if($errors->projectCreate->first())
     <livewire:dialog message="{{$errors->projectCreate->first()}}"></livewire:dialog>
@@ -26,11 +27,11 @@
                     @endif
                 </div>
             </div>
-            @if(sizeof($collab) > 0 )
+            @if(sizeof($collaborations) > 0 )
                 <div>
                     <h1 class="font-bold text-lg">Sheared With Me</h1>
                     <div class="flex flex-wrap w-full h-max">
-                        @foreach($collab as $project)
+                        @foreach($collaborations as $project)
                             <livewire:project-card title="{{$project->title}}"
                                                    id="{{$project->id}}" isShared="1"></livewire:project-card>
                         @endforeach

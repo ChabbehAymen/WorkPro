@@ -14,12 +14,6 @@
             <img src="{{asset('asset/imags/IdentificationCard.svg')}}">
             <span>Account</span>
         </div>
-        <div class="flex gap-2 items-center cursor-pointer">
-            <div class="h-4 w-1.5 rounded-2xl bg-black opacity-0"></div>
-            <img width="20" height="20" src="https://img.icons8.com/material-two-tone/24/duplicate.png"
-                 alt="duplicate" class="opacity-70"/>
-            <span>Create Project</span>
-        </div>
     </div>
 
     <div>
@@ -40,11 +34,11 @@
             <p class="text-gray-400">Sheared With Me</p>
             <div class="">
                 @foreach($collabs as $project)
-                    <div class="flex gap-2 mb-1 items-center">
+                    <a class="flex gap-2 mb-1 @if($selectedID === $project->id) bg-gray-100 @endif rounded-lg items-center" href="{{route('main', ['id'=>$project->id])}}">
                         <div class="h-4 w-1.5 rounded-2xl bg-black opacity-0"></div>
                         <img src="{{asset('asset/imags/IdentificationCard.svg')}}">
                         <span>{{$project->title}}</span>
-                    </div>
+                    </a>
                 @endforeach
             </div>
 

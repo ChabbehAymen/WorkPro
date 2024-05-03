@@ -1,30 +1,27 @@
-
 $('document').ready(function () {
     $('document').innerHTML +='<livewire:user-search-box projectId="{{$id}}"></livewire:user-search-box>'
 })
 
 const box = $('.searchUsersBox');
-
 $('#invite-btn').click(event =>{
-    showCreateProjectPopup()
+    showPopup()
 })
-$('#cancel-popup').click(event=>{
-    hideCreateProjectPopup()
+$('#cancel-search-popup').click(event=>{
+    hidPopup()
 })
 
 
-function showCreateProjectPopup() {
+function showPopup() {
     box.animate({'margin-top':'8rem'});
 }
 
-function hideCreateProjectPopup() {
+function hidPopup() {
     box.animate({'margin-top':'-30rem'}, 'slow');
 }
 const users = $('.user-row');
 const collabors = $('.collabor-row');
 for (const user of users) {
     for (const collabor of collabors) {
-        console.log(collabor.querySelector('a'));
         if (user.querySelector('h1').innerText.toLowerCase() === collabor.querySelector('h1').innerText.toLowerCase()) {
             user.find('a').css('pointerEvents','none');
             user.find('a').removeClass('bg-black')
