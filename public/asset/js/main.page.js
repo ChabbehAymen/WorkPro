@@ -19,16 +19,15 @@ function hidPopup() {
     box.animate({'margin-top':'-30rem'}, 'slow');
 }
 const users = $('.user-row');
-const collabors = $('.collabor-row');
-for (const user of users) {
-    for (const collabor of collabors) {
-        if (user.querySelector('h1').innerText.toLowerCase() === collabor.querySelector('h1').innerText.toLowerCase()) {
-            user.find('a').css('pointerEvents','none');
-            user.find('a').removeClass('bg-black')
-            // querySelector('a').style.pointerEvents = 'none';
-        }
-    }
-}
+const collaborators = $('.collabor-row');
+users.each(function (user) {
+    const userName = $(this).find('h1').text().toLowerCase();
+    collaborators.each(function (collaborator) {
+        const collaboratorName = $(this).find('h1').text().toLowerCase();
+        if (userName === collaboratorName) $(users[user]).find('a').css('display', 'none')
+    })
+})
+
 $('.searchUsersBox input').on('input', event =>{
 
     for (const user of users) {

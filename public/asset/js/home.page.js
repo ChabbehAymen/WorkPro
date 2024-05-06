@@ -10,7 +10,6 @@ $('input').on('input', event =>{
     const projectsCards = $('.project-card');
     const inputValue = event.target.value.toLowerCase();
     projectsCards.each(function() {
-        console.log(this)
         const cardTitle = $(this).find('h1').text().toLowerCase();
         if (cardTitle.includes(inputValue)) {
             $(this).css('display', 'block');

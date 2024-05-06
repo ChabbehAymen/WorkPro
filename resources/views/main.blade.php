@@ -11,9 +11,9 @@
         @endif
         @section('content')
             <livewire:user-search-box projectId="{{$project->id}}"></livewire:user-search-box>
-            <main class=" h-full pt-2.5 flex overflow-hidden">
+            <main class=" h-full w-full pt-2.5 flex overflow-hidden">
                 <livewire:nav-bar selectedID="{{$project->id}}"></livewire:nav-bar>
-                <div class="pl-4 overflow-hidden">
+                <div class="pl-4 w-full overflow-hidden">
                     <livewire:header
                         addIcon="https://img.icons8.com/material-two-tone/24/insert-row-below.png"></livewire:header>
 
@@ -87,67 +87,7 @@
                             <option value="">All</option>
                         </select>
                     </div>
-
-                    <div class="h-full w-full flex justify-around gap-4 mt-9 mb-11 overflow-y-auto">
-                        <div class="border rounded-lg h-max p-2">
-                            <h2 class="font-bold text-lg">To Do</h2>
-                            <div class="w-full h-full bg-gray-200 rounded-xl py-2 overflow-y-auto">
-                                <div class="rounded-xl m-2 p-3 bg-white w-72" id="card">
-                                    <img src="https://placehold.co/600x400/png" class="rounded-xl">
-                                    <p class="font-bold my-2">My First Tast</p>
-                                    <p class="w-full text-gray-500 my-2">Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing
-                                        elit.
-                                        Veritatis, ratione!</p>
-                                    <div class="my-2 flex items-center justify-between">
-                                        <button class="bg-black text-white rounded-xl px-3 py-1">Details</button>
-                                        <div class="flex h-max items center">
-                                            <img src="{{asset('asset/imags/profile-img.png')}}" alt="" srcset="">
-                                            <img src="{{asset('asset/imags/profile-img.png')}}" alt="" srcset="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="border rounded-lg h-max p-2">
-                            <h2 class="font-bold text-lg">In progress</h2>
-                            <div class="w-full h-full bg-gray-200 rounded-xl py-2">
-                                <div class="rounded-xl m-2 p-3 bg-white w-72" id="card">
-                                    <img src="https://placehold.co/600x400/png" class="rounded-xl">
-                                    <p class="font-bold my-2">My First Tast</p>
-                                    <p class="w-full text-gray-500 my-2">Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing
-                                        elit.
-                                        Veritatis, ratione!</p>
-                                    <div class="my-2 flex items-center justify-between">
-                                        <button class="bg-black text-white rounded-xl px-3 py-1">Details</button>
-                                        <div class="flex h-max items center">
-                                            <img src="{{asset('asset/imags/profile-img.png')}}" alt="" srcset="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="border rounded-lg h-max p-2">
-                            <h2 class="font-bold text-lg">Completed</h2>
-                            <div class="w-full h-full bg-gray-200 rounded-xl py-2">
-                                <div class="rounded-xl m-2 p-3 bg-white w-72" id="card">
-                                    <p class="font-bold my-2">My First Tast</p>
-                                    <p class="w-full text-gray-500 my-2">Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing
-                                        elit.
-                                        Veritatis, ratione!</p>
-                                    <div class="my-2 flex items-center justify-between">
-                                        <button class="bg-black text-white rounded-xl px-3 py-1">Details</button>
-                                        <div class="flex h-max items center">
-                                            <img src="{{asset('asset/imags/profile-img.png')}}" alt="" srcset="">
-                                            <img src="{{asset('asset/imags/profile-img.png')}}" alt="" srcset="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <livewire:tasks-container projectId="{{$project->id}}"></livewire:tasks-container>
                 </div>
             </main>
     @endsection

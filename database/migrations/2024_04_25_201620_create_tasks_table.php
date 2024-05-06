@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('description');
             $table->integer('status');
+            $table->string('img')->default('none');
             $table->foreignId('project_id')->constrained();
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
