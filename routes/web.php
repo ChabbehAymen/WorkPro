@@ -27,6 +27,9 @@ Route::middleware('auth')->group(function () {
         Route::delete('/revoke/{user_id}', [InvitationsController::class, 'delete'])->name('delete.invitation');
         Route::post('/collaborate/{user_id}',[CollaboratorController::class, 'create'])->name('create.collaborator');
         Route::delete('/quite/{user_id}', [CollaboratorController::class,'delete'])->name('delete.collaboration');
+        Route::get('/createTask', function (string $id){
+            return view('createTask', compact('id'));
+        })->name('create.task');
     });
 });
 

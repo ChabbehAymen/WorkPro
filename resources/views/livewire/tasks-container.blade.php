@@ -30,7 +30,7 @@
         <div class="w-full flex items-center justify-center mt-24">
             <div class="flex flex-col gap-2 items-center ">
                 No Tasks Yet Create One
-                <button class="bg-black text-white px-2 py1 rounded w-max">Create</button>
+                <a class="bg-black text-white px-2 py1 rounded w-max" href="{{route('create.task', ['project_id'=>$projectId])}}">Create</a>
             </div>
         </div>
     @endif

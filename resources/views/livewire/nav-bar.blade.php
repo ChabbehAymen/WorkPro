@@ -1,4 +1,4 @@
-<nav class="shadow-md w-max overflow-hidden py-6 px-5 flex flex-column gap-4">
+<nav class="shadow-md w-max overflow-hidden py-6 px-5 flex flex-col gap-4">
     <div class="flex items-center gap-3">
         <div class="profile-img" style="background-image: url({{asset('asset/imags/profile-img.png')}})"></div>
         <h1 class="text-md">{{auth()->user()->user_name}}</h1>
