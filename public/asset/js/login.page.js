@@ -11,7 +11,7 @@ $('.login-btn').click((e) => {
     $('.login').css('color', 'white');
     $('.register').css('color', 'black');
     $('.register-form').animate({left: '-70rem'}, 'slow');
-    $('.login-form').animate({bottom: '1.5rem'}, 'slow');
+    $('.login-form').animate({bottom: '20%'}, 'slow');
 });
 
 // Login Validation

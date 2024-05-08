@@ -7,7 +7,7 @@
     <livewire:dialog message="{{$errors->projectCreate->first()}}"></livewire:dialog>
 @endif
 @section('content')
-    <main class="h-full w-full">
+    <main class="h-full w-full flex flex-col">
         <livewire:header addIcon="https://img.icons8.com/material-two-tone/24/duplicate.png"
                          withProfile="{{asset('asset/imags/profile-img.png')}}"></livewire:header>
         <div class="px-6 py-4 h-full w-full">

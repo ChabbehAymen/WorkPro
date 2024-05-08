@@ -11,9 +11,11 @@
                 addIcon="https://img.icons8.com/material-two-tone/24/insert-row-below.png"></livewire:header>
             <div class="flex w-full h-full">
                 <div class="w-full h-full">
-                    <div class="h-96">
+                    <form class="h-96">
+                        <input class="form-control border-0 font-bold text-lg mb-3" placeholder="Title">
+                        <h1 class="mb-2">Description</h1>
                         <div class="w-full h-full" id="editor"></div>
-                    </div>
+                    </form>
                 </div>
                 <div></div>
 
