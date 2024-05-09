@@ -14,7 +14,7 @@
                         <h1 class="absolute font-bold m-6 text-sm">WorPro</h1>
                         <div class="flex items-end justify-center w-full h-full">
                             <div class="w-full h-full relative ">
-                                <form class="absolute shadow-lg border rounded px-6 py-14 h-max ml-36 flex flex-column login-form"
+                                <form class="absolute shadow-lg border rounded px-6 ml-36 flex flex-column login-form"
                                       method="POST" action="{{route('login')}}">
                                     @csrf
                                     <p class="font-light mb-4">Welcome!</p>
@@ -35,21 +35,21 @@
                                 </form>
 
                                 <form
-                                        class="absolute shadow-lg border rounded px-6 py-10 h-max ml-36 flex flex-column bottom-6 register-form"
+                                        class="absolute shadow-lg border rounded px-6 ml-36 flex flex-column bottom-6 register-form"
                                         method="POST" action="{{route('register')}}">
                                     @csrf
                                     @method('POST')
-                                    <h1 class="font-bold text-2xl mb-6">Sign in</h1>
+                                    <h1 class="font-bold text-2xl">Sign in</h1>
                                     <label for="">User Email</label>
                                     <input type="text" placeholder="Enter your Email"
-                                           class="border border-black rounded p-2 mb-4"
+                                           class="border border-black rounded p-2"
                                            id="email" name="email" required>
                                     <label for="">User Name</label>
                                     <input type="text" placeholder="First And Last Name Recemanded"
-                                           class="border border-black rounded p-2 mb-4" id="user_name" name="user_name"
+                                           class="border border-black rounded p-2" id="user_name" name="user_name"
                                            required>
                                     <label for="">Password</label>
-                                    <div class="border border-black rounded mb-4">
+                                    <div class="border border-black rounded">
                                         <input type="text" placeholder="Enter your Password" class="rounded p-2"
                                                name="password"
                                                required>

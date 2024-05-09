@@ -15,10 +15,16 @@
                     <div class="h-96 w-full mr-3">
                         <input class="form-control border-0 font-bold text-lg mb-3" placeholder="Title">
                         <h1 class="mb-2">Description</h1>
-                        <div class="w-full h-full" id="editor"></div>
+                        <div class="w-full" id="editor"></div>
                     </div>
                     <div class="right-side-form py-1 px-2">
-                        <div class="bg-gray-100 w-max">Add An Image</div>
+                        <div class="w-max img-container">
+                            <span class="header bg-gray-100">
+
+                            </span>
+                            <div></div>
+                            <input class="form-control" type="file">
+                        </div>
                     </div>
                 </form>
                 <div></div>
