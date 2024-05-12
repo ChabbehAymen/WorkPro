@@ -2,20 +2,27 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     height: 100vh;
 }
 
-main{
+main {
     display: flex;
     height: 100%;
     width: 100%;
 }
 
-.profile-img {
-    width: 2rem;
-    height: 2rem;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+.user-profile-div {
+    .profile-img {
+        width: 2rem;
+        height: 2rem;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .user-name{
+        width: 80%;
+    }
+
 }

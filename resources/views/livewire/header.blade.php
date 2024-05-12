@@ -1,4 +1,4 @@
-<div class="flex h-max w-full items-center justify-between mb-2 ">
+<div class="flex h-max w-full items-center justify-between mb-2 header">
     @if(sizeof($notifications) > 0)
         <livewire:dialog message="You Have New Invitation"></livewire:dialog>
     @endif
@@ -12,7 +12,7 @@
             <img width="20" height="20" src="{{$addIcon}}"
                  alt="insert-row-below" class="opacity-70" id="create-icon"/>
         </button>
-        <div class="w-1 h-5 bg-gray-200 rounded-2xl"></div>
+        <div class="w-1 h-5 bg-gray-200 rounded-2xl spacer"></div>
         <div class="dropdown w-max">
             <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <img width="20" height="20" src="https://img.icons8.com/material-two-tone/24/bell--v1.png"

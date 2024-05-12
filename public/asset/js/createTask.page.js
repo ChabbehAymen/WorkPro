@@ -1,4 +1,3 @@
-console.log('hello')
 const quill = new Quill('#editor', {
     modules: {
         toolbar: [
@@ -10,3 +9,8 @@ const quill = new Quill('#editor', {
     placeholder: 'Compose an epic...',
     theme: 'snow', // or 'bubble'
 });
+
+$('form .submit-btn').on( 'click',function (event) {
+    $('input[name=description]').val(quill.getSemanticHTML())
+    $('form').submit()
+})

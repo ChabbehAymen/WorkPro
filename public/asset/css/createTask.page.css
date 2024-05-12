@@ -3,6 +3,19 @@
     box-sizing: border-box;
 }
 
+.header{
+    padding-right: 2%;
+    div:has(input){
+        display: none;
+    }
+    #create-icon{
+        display: none;
+    }
+    .spacer{
+        display: none;
+    }
+}
+
 form {
     padding: 0 1%;
 
@@ -11,19 +24,34 @@ form {
     }
 
     .right-side-form {
-        margin-top: 7.5%;
+        margin-top: 15vh;
 
         .img-container{
             width: 30vh;
-            span{
+            label{
                 display: block;
                 width: 100%;
                 padding: 2% 3%;
+                .img-placeholder{
+                    height: 20vh;
+                    background-image: url("https://placehold.co/600x400/png");
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
             }
-            input{
-                width: 100%;
-            }
+
         }
+
+        button{
+            margin-top: 12%;
+        }
+    }
+
+    .img-input-label{
+        right: 0;
+        bottom: 0;
+        margin: 12% 5%;
     }
 
 }
