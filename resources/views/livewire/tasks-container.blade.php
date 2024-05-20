@@ -4,7 +4,7 @@
         <h2 class="font-bold text-lg">To Do</h2>
         <div class="w-full h-full bg-gray-200 rounded-xl py-2 overflow-y-auto">
             @foreach($tasks as $task)
-                @if($task->status === 'todo')
+                @if($task->status === 0)
                     <livewire:task taskId="{{$task->id}}" title="{{$task->title}}" discreption="{{$task->description}}" img="{{$task->img}}"></livewire:task>
                 @endif
             @endforeach
@@ -13,7 +13,7 @@
     <div class="border rounded-lg h-max p-2">
         <h2 class="font-bold text-lg">In progress</h2>
         @foreach($tasks as $task)
-            @if($task->status === 'doing')
+            @if($task->status === 1)
                 <livewire:task taskId="{{$task->id}}" title="{{$task->title}}" discreption="{{$task->description}}" img="{{$task->img}}"></livewire:task>
             @endif
         @endforeach
@@ -21,7 +21,7 @@
     <div class="border rounded-lg h-max p-2">
         <h2 class="font-bold text-lg">Completed</h2>
         @foreach($tasks as $task)
-            @if($task->status === 'todo')
+            @if($task->status === 2)
                 <livewire:task taskId="{{$task->id}}" title="{{$task->title}}" discreption="{{$task->description}}" img="{{$task->img}}"></livewire:task>
             @endif
         @endforeach
