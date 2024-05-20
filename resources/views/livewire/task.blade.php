@@ -2,8 +2,8 @@
     @if ($img != 'none')
     <img src="https://placehold.co/600x400/png" class="rounded-xl">
     @endif
-    <p class="font-bold my-2">{{$title}}</p>
-    
+    <h1 class="font-bold my-2">{{$title}}</h1>
+
     <p class="w-full text-gray-500 my-2">{{html_entity_decode($discreption)}}</p>
     <div class="my-2 flex items-center justify-between">
         <button class="bg-black text-white rounded-xl px-3 py-1">Details</button>

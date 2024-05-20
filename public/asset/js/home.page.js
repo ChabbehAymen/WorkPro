@@ -2,6 +2,10 @@ const popup = $('#createProjectPopup');
 $('#create-icon').click(event=>{
     showCreateProjectPopup()
 })
+
+$('#create-btn').click(event=>{
+    showCreateProjectPopup()
+})
 $('#cancel-popup').click(event=>{
     hideCreateProjectPopup()
 })
@@ -18,7 +22,6 @@ $('input').on('input', event =>{
         }
     });
 });
-
 
 function showCreateProjectPopup() {
     popup.animate({'margin-top':'8rem'});

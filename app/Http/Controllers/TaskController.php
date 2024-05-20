@@ -23,12 +23,19 @@ class TaskController extends Controller
             'description' => ['required'],
             'img' => ['file', 'optional']
         ]);
+//        $this->taskRepository->create([
+//            'title' => $data['title'],
+//            'description' => $data['description'],
+//            'status'=>0,
+//            'project_id' => $projectId,
+//            'user_id' => auth()->id()
+//        ]);
         $this->taskRepository->create([
-            'title' => $data['title'],
-            'description' => $data['description'],
+            'title'=>'test Task',
+            'description'=>'< h1 > < em > Text as title < / em > < / h1 >',
             'status'=>0,
-            'project_id' => $projectId,
-            'user_id' => auth()->id()
+            'project_id'=>$projectId,
+            'user_id'=>auth()->id()
         ]);
         return redirect()->route('main', [$projectId]);
     }

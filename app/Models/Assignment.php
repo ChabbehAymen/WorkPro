@@ -9,8 +9,9 @@ class Assignment extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'collaborator',
-        'task_id'
+        'user_id',
+        'task_id',
+        'project_id'
     ];
 
     public function users()

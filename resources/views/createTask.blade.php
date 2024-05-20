@@ -6,8 +6,6 @@
 @endsection
 @section('content')
 
-    {{var_dump($errors->createTask->first())}}
-
     @if($errors->createTask->first())
         <livewire:dialog message="{{$errors->createTask->first()}}">
             @endif
