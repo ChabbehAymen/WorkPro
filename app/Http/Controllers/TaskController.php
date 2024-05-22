@@ -21,22 +21,18 @@ class TaskController extends Controller
         $data = $request->validateWithBag('createTask', [
             'title' => ['bail', 'required', 'max:50'],
             'description' => ['required'],
-            'img' => ['file', 'optional']
         ]);
-//        $this->taskRepository->create([
-//            'title' => $data['title'],
-//            'description' => $data['description'],
-//            'status'=>0,
-//            'project_id' => $projectId,
-//            'user_id' => auth()->id()
-//        ]);
-        $this->taskRepository->create([
-            'title'=>'test Task',
-            'description'=>'< h1 > < em > Text as title < / em > < / h1 >',
-            'status'=>0,
-            'project_id'=>$projectId,
-            'user_id'=>auth()->id()
+
+        $request->validate([
+            'img' => ['image','mimes:jpeg,png,jpg'],
         ]);
+        $photo = $request->file('img');
+        $fileName = time() . '.' . $photo->getClientOriginalExtension();
+        $photo->move(public_path('asset/imags'), $fileName);
+        $data['img'] = 'asset/imags/'.$fileName;
+        $data['project_id']=$projectId;
+        $data['user_id']=auth()->id();
+        $this->taskRepository->create($data);
         return redirect()->route('main', [$projectId]);
     }
 
@@ -44,6 +40,17 @@ class TaskController extends Controller
     {
         if ($request) $this->taskRepository->get(['projectId' => $projectId, 'userId' => $request->input('filter')]);
         return $this->taskRepository->get(['projectId' => $projectId, 'userId' => null]);
+    }
+
+    public function delete($task_id){
+        $this->taskRepository->delete($task_id);
+        return back();
+    }
+
+    public function updateState(Request $request, $id){
+        // dd($id, $request->status);
+        $this->taskRepository->update($id, ['status'=>$request->status]);
+        return back();
     }
 
 }

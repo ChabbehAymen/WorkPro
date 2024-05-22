@@ -3,7 +3,7 @@ const quill = new Quill('#editor', {
         toolbar: [
             [{ header: [1, 2, false] }],
             ['bold', 'italic', 'underline'],
-            ['blockquote','code-block', 'image'],
+            ['blockquote','code-block'],
         ],
     },
     placeholder: 'Compose an epic...',

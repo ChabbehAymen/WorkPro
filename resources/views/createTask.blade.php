@@ -16,7 +16,7 @@
             <livewire:header
                 addIcon="https://img.icons8.com/material-two-tone/24/insert-row-below.png"></livewire:header>
             <div class="flex w-full h-full">
-                <form class="w-full h-full flex gap-2 relative" method="post" action="{{route('task.create', [$id])}}">
+                <form class="w-full h-full flex gap-2 relative" method="post" action="{{route('task.create', [$id])}}" enctype="multipart/form-data">
                     @csrf
                     <input type="text" name="description" hidden="hidden">
                     <div class="h-96 w-full mr-3">
@@ -29,7 +29,7 @@
                             <label class="bg-gray-100 text-center rounded-t cursor-pointer">
                                 Add Image
                                 <div class="img-placeholder w-full rounded"></div>
-                                <input id="img-input" class="form-control text-sm" type="file" hidden="hidden">
+                                <input id="img-input" class="form-control text-sm" type="file" name="img" hidden="hidden">
                             </label>
                             <button class="btn bg-black text-white w-full submit-btn" type="button"> Submit</button>
                         </div>

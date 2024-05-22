@@ -12,9 +12,8 @@ class AssignmentRepository extends BaseRepo
     public function get($params = null): array|Collection{
         return $this->model->query()
         ->select()
-        ->where('project_id', '=', $params['project_id'])
-        ->where('task_id')
+        ->where('task_id', '=', $params)
         ->get();
     }
-    
+
 }

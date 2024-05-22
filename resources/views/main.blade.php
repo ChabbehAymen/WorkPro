@@ -16,6 +16,9 @@
                 <div class="pl-4 w-full overflow-hidden">
                     <livewire:header
                         addIcon="https://img.icons8.com/material-two-tone/24/insert-row-below.png"></livewire:header>
+                    <script>$('#create-icon').click(event=>{
+                            location.href = 'http://127.0.0.1:8000/project/{{$project->id}}/createTask';
+                        })</script>
 
                     <div class="w-full flex justify-between pr-8 ml-3">
                         <div class="flex gap-2 items-center w-max">

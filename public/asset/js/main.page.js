@@ -37,8 +37,3 @@ $('.searchUsersBox input').on('input', event =>{
 
     }
 })
-
-let itme = document.createElement("p")
-
-itme.innerHTML = $('#card').find('p').text()
-console.log(itme.textContent)
