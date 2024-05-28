@@ -13,7 +13,7 @@
                     <main class="w-full h-full">
                         <h1 class="absolute font-bold m-6 text-sm">WorPro</h1>
                         <div class="flex items-end justify-center w-full h-full">
-                            <div class="w-full h-full relative ">
+                            <div class="w-full h-full relative forms-container">
                                 <form class="absolute shadow-lg border rounded px-6 ml-36 flex flex-column login-form"
                                       method="POST" action="{{route('login')}}">
                                     @csrf
@@ -39,7 +39,7 @@
                                         method="POST" action="{{route('register')}}">
                                     @csrf
                                     @method('POST')
-                                    <h1 class="font-bold text-2xl">Sign in</h1>
+                                    <h1 class="font-bold text-2xl">Sign Up</h1>
                                     <label for="">User Email</label>
                                     <input type="text" placeholder="Enter your Email"
                                            class="border border-black rounded p-2"
@@ -59,7 +59,7 @@
                                     <button type="submit" class="bg-black text-white rounded p-2">SIGN UP</button>
                                 </form>
                             </div>
-                            <img src="{{asset('asset/imags/login-img.png')}}" class="w-full h-full">
+                            <img src="{{asset('asset/imags/login-img.png')}}" class="w-full h-full login-img">
 
                         </div>
                         <div class="absolute bottom-24 flex items-center p-2 rounded-3xl gap-4 btn-container">

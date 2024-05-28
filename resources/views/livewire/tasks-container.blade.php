@@ -2,7 +2,7 @@
     @if(sizeof($tasks) > 0)
     <div class="border rounded-lg h-max p-2">
         <h2 class="font-bold text-lg">To Do</h2>
-        <div class="w-full h-full bg-gray-200 rounded-xl py-2 overflow-y-auto">
+        <div class="w-full h-full bg-gray-200 rounded-xl py-2 overflow-y-auto" style="overflow-y: scroll !important;" >
             @foreach($tasks as $task)
             @if($task->status === 0)
             <livewire:task task_id="{{$task->id}}" title="{{$task->title}}" discreption="{{$task->description}}" img="{{$task->img}}" state="{{$task->status}}"></livewire:task>

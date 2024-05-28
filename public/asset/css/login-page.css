@@ -40,4 +40,37 @@ body {
 
 
 
+@media screen and (max-width:750px){
+    
 
+    .login-form, .register-form{
+        width: 70%;
+        height: max-content;
+        padding-bottom: 8%;
+        margin-left: 0rem !important;
+        input{
+            width: 100%;
+        }
+    }
+
+    .btn-container{
+        left: 20% !important;
+        bottom: 5% !important;
+    }
+
+    .register-form{
+        margin-left: 15% !important;
+    }
+
+    .forms-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+
+    }
+
+    .login-img{
+        display: none;
+    }
+}

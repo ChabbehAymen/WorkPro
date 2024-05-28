@@ -26,3 +26,22 @@ main {
     }
 
 }
+
+@media screen and (max-width:750px){
+    .header{
+        width: 100%;
+        
+        div:has(input){
+            display: none;
+        }
+    }
+    #createProjectPopup{
+        margin-left: 15% !important;
+    }
+
+    nav{
+        position: absolute;
+        height: 100vh;
+        margin-left: -70%;
+    }
+}

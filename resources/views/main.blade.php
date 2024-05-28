@@ -11,9 +11,9 @@
         @endif
         @section('content')
             <livewire:user-search-box projectId="{{$project->id}}"></livewire:user-search-box>
-            <main class=" h-full w-full pt-2.5 flex overflow-hidden">
+            <main class=" h-full w-full pt-2.5 flex">
                 <livewire:nav-bar selectedID="{{$project->id}}"></livewire:nav-bar>
-                <div class="pl-4 w-full overflow-hidden">
+                <div class="pl-4 w-full">
                     <livewire:header
                         addIcon="https://img.icons8.com/material-two-tone/24/insert-row-below.png"></livewire:header>
                     <script>$('#create-icon').click(event=>{
@@ -39,8 +39,8 @@
                                             @endfor
                                         </button>
                                     @endif
-                                    <ul class="dropdown-menu dropdown-menu-end w-max px-2 overflow-hidden h-40">
-                                        <div class="w-full h-full overflow-y-auto">
+                                    <ul class="dropdown-menu dropdown-menu-end w-max px-2 h-40">
+                                        <div class="w-full h-full">
                                             @if($projectCreator != null)
                                             <li class="flex mb-2 py-2 border-b gap-2 items-center collabor-row">
                                                 <div class="flex w-full gap-2 items-center">
@@ -84,11 +84,6 @@
                             </div>
                             @endif
                         </div>
-                        <select name="" id=""
-                                class="p-1.5 rounded text-sm border border-gray-300 bg-transparent text-gray-400">
-                            <option value="">Mine</option>
-                            <option value="">All</option>
-                        </select>
                     </div>
                     <livewire:tasks-container projectId="{{$project->id}}"></livewire:tasks-container>
                 </div>
