@@ -48,8 +48,19 @@ class TaskController extends Controller
     }
 
     public function updateState(Request $request, $id){
-        // dd($id, $request->status);
         $this->taskRepository->update($id, ['status'=>$request->status]);
+        return back();
+    }
+
+    public function find($id){
+        $data = $this->taskRepository->find($id);
+        return view('editetask', compact('data'));
+    }
+
+    public function edit($id, Request $request){
+        $this->taskRepository->update($id, 
+        ['title'=>$request->title, 
+        'description'=>$request->description]);
         return back();
     }
 

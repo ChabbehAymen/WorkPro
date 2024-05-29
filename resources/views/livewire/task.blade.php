@@ -63,7 +63,7 @@
 
     <div class="w-full text-gray-500 my-2 description-holder">{{html_entity_decode($discreption)}}</div>
     <div class="my-2 flex items-center justify-between">
-        <button class="bg-black text-white rounded-xl px-3 py-1">Details</button>
+        <a class="btn bg-black text-white rounded-xl px-3 py-1" href="{{route('task.find', [$task_id])}}">Details</a>
         <div class="flex h-max items center">
             @if (sizeof($assignemts)>0)
             @foreach($assignemts as $assignemt)
