@@ -11,10 +11,13 @@
 @section('content')
 <main class="flex flex-col">
     <div class="task-img-holder rounded" style="background-image: url('{{asset($data->img)}}');"></div>
-    <form action="" class="flex flex-col">
+    <form action="{{route('task.edit', [$data->id])}}" method="post" class="flex flex-col">
+    @csrf
         <div class="w-full flex items-center justify-between">
             <input class="font-bold text-3xl" value="{{$data->title}}" name="title" disabled>
+            @if ($data->user_id === auth()->id())
             <i class="fa-solid fa-pen"></i>
+            @endif
         </div>
         <input type="text" value="{{$data->description}}" name="description" hidden>
         <div class="w-full" id="editor"></div>
