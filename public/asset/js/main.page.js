@@ -37,3 +37,17 @@ $('.searchUsersBox input').on('input', event =>{
 
     }
 })
+
+$('.tasks-search-input').on('input', function (e) { 
+    const tasks = $("div #card")
+    tasks.each((index, card) => {
+        const cardTitle = $(card).find('h1').text().toLowerCase();
+        if (cardTitle.includes(e.target.value.toLowerCase())) {
+            $(card).css('display', 'block');
+        } else $(card).css('display', 'none')
+    })
+ })
+console.log($('.tasks-container > div:last'));
+ if($('.tasks-container > div:last').text() === ''){
+    $('.tasks-container > div:last').html('Hello')
+ }

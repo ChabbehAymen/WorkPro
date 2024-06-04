@@ -13,7 +13,7 @@ class Task extends Component
 
     public $title;
 
-    public $discreption;
+    public $date;
 
     public $task_id;
 

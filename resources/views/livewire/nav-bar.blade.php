@@ -12,7 +12,7 @@
         <div class="flex gap-2 items-center mb-1 cursor-pointer">
             <div class="h-4 w-1.5 rounded-2xl bg-black opacity-0"></div>
             <img src="{{asset('asset/imags/IdentificationCard.svg')}}">
-            <span>Account</span>
+            <a class="flex gap-2 mb-1 @if($selectedID === 0) bg-gray-100 @endif rounded-lg items-center"href="{{route('profile')}}" >Account</a>
         </div>
     </div>
 
@@ -22,7 +22,6 @@
             @foreach($projects as $project)
                 <a class="flex gap-2 mb-1 @if($selectedID === $project->id) bg-gray-100 @endif rounded-lg items-center" href="{{route('main', ['id'=>$project->id])}}">
                     <div class="h-4 w-1.5 rounded-2xl bg-black @if($selectedID !== $project->id) opacity-0 @endif"></div>
-                    <img src="{{asset('asset/imags/IdentificationCard.svg')}}">
                     <span>{{$project->title}}</span>
                 </a>
             @endforeach
@@ -36,7 +35,6 @@
                 @foreach($collabs as $project)
                     <a class="flex gap-2 mb-1 @if($selectedID === $project->id) bg-gray-100 @endif rounded-lg items-center" href="{{route('main', ['id'=>$project->id])}}">
                         <div class="h-4 w-1.5 rounded-2xl bg-black opacity-0"></div>
-                        <img src="{{asset('asset/imags/IdentificationCard.svg')}}">
                         <span>{{$project->title}}</span>
                     </a>
                 @endforeach

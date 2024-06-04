@@ -1,0 +1,14 @@
+
+
+label{
+    width: 20vw;
+    height: 20vh;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.user-profile-div{
+    display: none !important;
+}

@@ -5,7 +5,7 @@
     <img src="{{asset('asset/imags/Logo.png')}}" alt="" srcset="">
     <div class="bg-gray-100 w-max h-6 mr-36 pl-4 pr-1 gap-2 flex items-center rounded-2xl">
         <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
-        <input type="text" class="bg-transparent w-full search-input" placeholder="Search">
+        <input type="text" class="bg-transparent w-full search-input tasks-search-input" placeholder="Search">
     </div>
     <div class="flex gap-2 items-center">
         <button>

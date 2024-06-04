@@ -1,5 +1,6 @@
 let endabled = false;
-const defutlTitle = $('input[name=title]').val().replace(/ /g,'')
+const titleInput = $('input[name=title]');
+const defaultTitle = titleInput.val().replace(/ /g,'')
 const defultDescription = $('input[name=description]').val().replace(/ /g,'')
 const quill = new Quill('#editor', {
     modules: {
@@ -20,20 +21,13 @@ quill.on('text-change', (delta)=>{
     else $('button').css('display', 'none')
     $('input[name=description]').val(quill.getSemanticHTML())
 })
+titleInput.on('input', function(){
+    if($(this).val() !== defaultTitle) 
+        $('button').css('display', 'block');
+    else 
+        $('button').css('display', 'none');
+});
 
-// $('input[name=title]').change(function () { 
-//     console.log($(this).val());
-//  })
-
-$('input[name=title]').on('change', function(){
-    console.log($(this).val());
-})
-
-// $('input[name=title]').change(function(){
-//     console.log($(this).val());
-//     if($(this).val() !== defutlTitle) $('button').css('display', 'block')
-//     else $('button').css('display', 'none')
-// })
 
 $('i').click(event =>{
     if (endabled) disableEditor()
@@ -42,13 +36,13 @@ $('i').click(event =>{
 })
 
 function endablEditor(){
-    $('input[name=title]').prop('disabled', false)
+    titleInput.prop('disabled', false)
     $('.ql-toolbar').css('display', 'block')
     quill.enable()
 }
 
 function disableEditor(){
-    $('input[name=title]').prop('disabled', true)
+    titleInput.prop('disabled', true)
     $('.ql-toolbar').css('display', 'none')
     quill.enable(false)
 }

@@ -8,6 +8,8 @@
 @endsection
 @if(session('success'))
     <livewire:dialog message="{{session('success')}}">
+    @elseif ($errors->createTask->first())
+    <livewire:dialog message="{{$errors->createTask->first()}}">
         @endif
         @section('content')
             <livewire:user-search-box projectId="{{$project->id}}"></livewire:user-search-box>

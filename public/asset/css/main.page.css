@@ -1,9 +1,40 @@
-
-body{
+body {
     overflow: hidden;
 }
 main {
     .search-input:focus {
         outline: none;
+    }
+    #card {
+        display: block;
+    }
+    .tasks-container {
+        max-height: 75vh;
+    }
+    .tasks-container > div {
+        max-height: 92%;
+        overflow-x: hidden;
+    }
+    .tasks-container > div::-webkit-scrollbar {
+        background: rgba(117, 117, 117, 0.2);
+        width: 8px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+    }
+    .tasks-container > div::-webkit-scrollbar-thumb {
+        background: black;
+        height: 5px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
     }
 }

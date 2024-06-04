@@ -5,14 +5,16 @@
 <script src="{{asset('asset/js/edit.page.js')}}" defer></script>
 <!-- Add the theme's stylesheet -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.bubble.css" />
-<link href="https://cdn.jsdelivr.net/npm/quill@2.0.1/dist/quill.snow.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/quill@2.0.1/dist/quill.snow.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
 @endsection
 @section('content')
 <main class="flex flex-col">
+    @if ($data->img!== 'none')
     <div class="task-img-holder rounded" style="background-image: url('{{asset($data->img)}}');"></div>
+    @endif
     <form action="{{route('task.edit', [$data->id])}}" method="post" class="flex flex-col">
-    @csrf
+        @csrf
         <div class="w-full flex items-center justify-between">
             <input class="font-bold text-3xl" value="{{$data->title}}" name="title" disabled>
             @if ($data->user_id === auth()->id())
