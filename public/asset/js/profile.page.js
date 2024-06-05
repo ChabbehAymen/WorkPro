@@ -10,36 +10,15 @@ const imgs = [
     'https://images.unsplash.com/photo-1613843873231-1447db182f97?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDM1fGlVSXNuVnRqQjBZfHxlbnwwfHx8fHw%3D',
     'https://images.unsplash.com/photo-1685158174480-56e283f51ab3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8NXw3ZzRtVzMtQm9ab3x8ZW58MHx8fHx8'
 ];
-const popup = $('#createProjectPopup');
-$('#create-icon').click(event=>{
-    showCreateProjectPopup()
-})
-
-$('#create-btn').click(event=>{
-    showCreateProjectPopup()
-})
-$('#cancel-popup').click(event=>{
-    hideCreateProjectPopup()
-})
-
-$('input').on('input', event =>{
-    const projectsCards = $('.project-card');
-    const inputValue = event.target.value.toLowerCase();
-    projectsCards.each(function() {
-        const cardTitle = $(this).find('h1').text().toLowerCase();
-        if (cardTitle.includes(inputValue)) {
-            $(this).css('display', 'block');
-        } else {
-            $(this).css('display', 'none');
-        }
-    });
+const editForm = $('form');
+$('.profile-bg').css('background-image', `url(${imgs[Math.floor(Math.random()*imgs.length)]})`);
+$('.profile-bg button').click(function (e) { 
+    $(editForm).animate({'top':'20vh'});
 });
-
-function showCreateProjectPopup() {
-    popup.animate({'margin-top':'8rem'});
-}
-
-function hideCreateProjectPopup() {
-    popup.animate({'margin-top':'-30rem'}, 'slow');
-}
-
+$('#cancel-btn').click(function (e) { 
+    $(editForm).animate({'top':'-60vh'});
+});
+$('.edit-passwrod').click(function (e) { 
+    console.log($('.edit-passwrod-input'));
+    $('.edit-password-input').css('display','block')
+});

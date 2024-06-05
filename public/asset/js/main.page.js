@@ -47,7 +47,3 @@ $('.tasks-search-input').on('input', function (e) {
         } else $(card).css('display', 'none')
     })
  })
-console.log($('.tasks-container > div:last'));
- if($('.tasks-container > div:last').text() === ''){
-    $('.tasks-container > div:last').html('Hello')
- }

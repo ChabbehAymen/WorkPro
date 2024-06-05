@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware('auth')->group(function () {
+    Route::get('/profile', [UserController::class, 'show'])->name('profile');
+    Route::post('/profile/edite', [UserController::class, 'edite'])->name('profile.edite');
     Route::get('/logout', [UserController::class, 'logout'])->name('logout');
-    Route::view('/profile', 'profile')->name('profile');
 
     Route::get('/home', [ProjectController::class, 'show'])->name('home');
-    Route::get('/profile', [UserController::class, 'show'])->name('profile');
     Route::group(['prefix' => '/project'], function () {
         Route::get('/{id}', [ProjectController::class, 'find'])->name('main');
         Route::post('/create', [ProjectController::class, 'store'])->name('create.project');
