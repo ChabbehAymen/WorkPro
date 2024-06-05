@@ -68,7 +68,7 @@
                         alt="" srcset="">
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" type="button">Profile</a></li>
+                    <li><a class="dropdown-item" href="{{route('profile')}}" type="button">Profile</a></li>
                     <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
                 </ul>
             </div>

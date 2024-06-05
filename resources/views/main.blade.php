@@ -15,7 +15,7 @@
             <livewire:user-search-box projectId="{{$project->id}}"></livewire:user-search-box>
             <main class=" h-full w-full pt-2.5 flex">
                 <livewire:nav-bar selectedID="{{$project->id}}"></livewire:nav-bar>
-                <div class="pl-4 w-full">
+                <div class="px-4 w-full content">
                     <livewire:header
                         addIcon="https://img.icons8.com/material-two-tone/24/insert-row-below.png"></livewire:header>
                     <script>$('#create-icon').click(event=>{

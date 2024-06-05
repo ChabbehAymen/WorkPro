@@ -9,7 +9,7 @@
     @endif
     <main class="flex h-full w-full">
         <livewire:nav-bar selectedID="{{0}}"></livewire:nav-bar>
-        <div class="flex flex-col p-4 gap-4 w-full">
+        <div class="flex flex-col p-4 gap-4 w-full content">
 
             <div class="flex profile-bg rounded relative">
                 <button class="btn bg-black text-white w-max m-auto absolute right-0 text-sm">Update Profile</button>

@@ -16,7 +16,7 @@ $('.profile-bg button').click(function (e) {
     $(editForm).animate({'top':'20vh'});
 });
 $('#cancel-btn').click(function (e) { 
-    $(editForm).animate({'top':'-60vh'});
+    $(editForm).animate({'top':'-70vh'});
 });
 $('.edit-passwrod').click(function (e) { 
     console.log($('.edit-passwrod-input'));

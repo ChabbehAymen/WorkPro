@@ -15,7 +15,7 @@
         <div class="pl-4 w-full">
             <livewire:header
                 addIcon="https://img.icons8.com/material-two-tone/24/insert-row-below.png"></livewire:header>
-            <div class="flex w-full h-full">
+            <div class="flex h-full content">
                 <form class="w-full h-full flex gap-2 relative" method="post" action="{{route('task.create', [$id])}}" enctype="multipart/form-data">
                     @csrf
                     <input type="text" name="description" hidden="hidden">

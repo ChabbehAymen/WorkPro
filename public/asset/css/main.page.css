@@ -5,6 +5,9 @@ main {
     .search-input:focus {
         outline: none;
     }
+    .content{
+        margin-left: 21vw;
+    }
     #card {
         display: block;
     }
@@ -15,9 +18,9 @@ main {
         max-height: 92%;
         overflow-x: hidden;
     }
-    .tasks-container > div::-webkit-scrollbar {
+    /* .tasks-container > div::-webkit-scrollbar {
         background: rgba(117, 117, 117, 0.2);
-        width: 8px;
+        width: 5px;
         -moz-border-radius: 5px;
         -webkit-border-radius: 5px;
         border-radius: 5px;
@@ -29,6 +32,7 @@ main {
     .tasks-container > div::-webkit-scrollbar-thumb {
         background: black;
         height: 5px;
+        min-height: 5px; 
         -moz-border-radius: 3px;
         -webkit-border-radius: 3px;
         border-radius: 3px;
@@ -36,5 +40,13 @@ main {
         -moz-transition: 0.3s;
         -o-transition: 0.3s;
         transition: 0.3s;
+    } */
+}
+@media screen and (max-width:975px){
+    main{
+        .content{
+            margin-left: 0vw;
+        }
+
     }
 }

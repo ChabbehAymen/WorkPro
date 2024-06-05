@@ -42,4 +42,6 @@ function showCreateProjectPopup() {
 function hideCreateProjectPopup() {
     popup.animate({'margin-top':'-30rem'}, 'slow');
 }
-
+$('.project-card > :first-child').each((index, element) =>{
+    $(element).css('background-image', `url(${imgs[Math.floor(Math.random()*imgs.length)]})`);
+});

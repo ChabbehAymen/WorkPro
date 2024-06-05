@@ -1,7 +1,7 @@
-<nav class="shadow-md w-max overflow-hidden py-6 px-5 flex flex-col gap-4">
+<nav class="shadow-md overflow-hidden py-6 px-5 flex flex-col gap-4">
     <div class="flex items-center gap-3 user-profile-div">
         <div class="profile-img" style="background-image: url({{asset('asset/imags/profile-img.png')}})"></div>
-        <h1 class="text-md user-name">{{auth()->user()->user_name}}</h1>
+        <h1 class="text-md user-name w-full">{{auth()->user()->user_name}}</h1>
     </div>
     <div class="">
         <a class="flex gap-2 items-center mb-1 cursor-pointer" href="{{route('home')}}">
