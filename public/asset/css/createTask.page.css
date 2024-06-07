@@ -53,5 +53,18 @@ form {
         bottom: 0;
         margin: 12% 5%;
     }
+}
 
+@media screen and (max-width: 975px) {
+    .content{
+        overflow-y: auto;
+        margin-right: 2vw;
+    }
+    form {
+        height: max-content !important;
+        flex-direction: column;
+        .right-side-form{
+            margin-top: 0;
+        }
+    }
 }

@@ -2,14 +2,14 @@
     box-sizing: border-box;
 }
 
-nav{
+nav {
     width: 21vw;
     position: absolute;
     background-color: white;
     height: 100vh;
 }
 
-.content{
+.content {
     margin-left: 21vw;
 }
 
@@ -32,41 +32,38 @@ main {
         background-repeat: no-repeat;
     }
 
-    .user-name{
+    .user-name {
         width: 80%;
     }
-
 }
 
-@media screen and (max-width:975px){
-    .header{
+.nav-profile-img{
+    width: 2em;
+    height: 2em;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+@media screen and (max-width: 975px) {
+    .header {
         width: 100%;
-        
-        div:has(input){
+
+        div:has(input) {
             display: none;
         }
     }
-    #createProjectPopup{
+    #createProjectPopup {
         margin-left: 15% !important;
     }
 
-    nav{
+    nav {
         position: absolute;
         height: 100vh;
         margin-left: -70%;
     }
 
-    .content{
+    .content {
         margin-left: 0;
     }
-}
-
-::-webkit-scrollbar{
-    width: 3px;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb{
-    background-color: black;
-    border-radius: 10px;
 }

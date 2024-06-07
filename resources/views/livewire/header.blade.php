@@ -64,8 +64,8 @@
             <div class="dropdown w-max">
                 <button class="btn " type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img
-                        src="{{$user->profile_img !== 'unset'?asset("asset/imags/$collabor->profile_img"):asset('asset/imags/profile-img.png')}}"
-                        alt="" srcset="">
+                        src="{{$user->profile_img !== 'unset'?asset("$user->profile_img"):asset('asset/imags/profile-img.png')}}"
+                        class="smal-profile_img" >
                 </button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="{{route('profile')}}" type="button">Profile</a></li>
