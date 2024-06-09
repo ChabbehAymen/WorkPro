@@ -28,7 +28,7 @@
             <p>You Acount Crated At: {{$user->created_at}}</p>
         </div>
     </main>
-    <form action="{{route('profile.edite')}}" method="POST" enctype="multipart/form-data" class="absolute shadow rounded flex flex-col gap-3 bg-white p-2">
+    <form action="{{route('profile.edite')}}" method="POST" enctype="multipart/form-data" class="absolute shadow rounded flex flex-col gap-2 bg-white p-2">
         @csrf
         <img width="15" height="15" src="https://img.icons8.com/material-two-tone/24/cancel--v1.png" alt="cancel--v1" class=" opacity-80 absolute right-0 top-0 m-3 cursor-pointer hover:opacity-50" id="cancel-btn" />
         <label class="self-center cursor-pointer img-placeholder" for="profile-img" @if ($user->profile_img === 'unset')

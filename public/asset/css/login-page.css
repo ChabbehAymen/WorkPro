@@ -36,6 +36,9 @@ body {
     input:focus{
         outline: none;
     }
+    .nav-bar-menu{
+        display: none;
+    }
 }
 
 

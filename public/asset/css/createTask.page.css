@@ -58,12 +58,15 @@ form {
 @media screen and (max-width: 975px) {
     .content{
         overflow-y: auto;
+        overflow-x: hidden;
         margin-right: 2vw;
     }
     form {
-        height: max-content !important;
+        height: max-content;
         flex-direction: column;
         .right-side-form{
+            height: 70vh;
+            position:relative;
             margin-top: 0;
         }
     }

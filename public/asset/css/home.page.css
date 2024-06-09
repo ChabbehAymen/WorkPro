@@ -7,3 +7,7 @@ input:focus{
     height: 2em;
     border-radius: 50%;
 }
+
+.nav-bar-menu{
+    display: none;
+}

@@ -2,7 +2,7 @@
     <div class="w-full flex items-center py-3 border-b user-row">
         <div class="w-full flex items-center gap-3">
             <img
-                src="{{$profileImg !== 'unset'?asset("asset/imags/$profileImg"):asset('asset/imags/profile-img.png')}}">
+                src="{{$profileImg !== 'unset'?asset(asset($profileImg)):asset('asset/imags/profile-img.png')}}" class=" w-10 h-10 user-profile-img" >
             <h1 class="w-4/5 overflow-hidden text-ellipsis">{{$userName}}</h1>
 
         </div>

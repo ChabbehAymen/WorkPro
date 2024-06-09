@@ -18,12 +18,12 @@
         <div class="w-full flex items-center justify-between">
             <input class="font-bold text-3xl" value="{{$data->title}}" name="title" disabled>
             @if ($data->user_id === auth()->id())
-            <i class="fa-solid fa-pen"></i>
+            <i class="fa-solid fa-pen edit-pen"></i>
             @endif
         </div>
         <input type="text" value="{{$data->description}}" name="description" hidden>
         <div class="w-full" id="editor"></div>
-        <button type="submit" class="btn bg-black text-white w-max self-end hidden">Post</button>
+        <button type="submit" class="btn bg-black text-white w-max self-end">Post</button>
     </form>
 </main>
 

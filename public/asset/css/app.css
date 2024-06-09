@@ -9,6 +9,10 @@ nav {
     height: 100vh;
 }
 
+.nav-bar-menu{
+    display: none;
+}
+
 .content {
     margin-left: 21vw;
 }
@@ -37,9 +41,13 @@ main {
     }
 }
 
+.header-profile-img{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .nav-profile-img{
-    width: 2em;
-    height: 2em;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -49,7 +57,7 @@ main {
     .header {
         width: 100%;
 
-        div:has(input) {
+        .search-div{
             display: none;
         }
     }
@@ -57,10 +65,18 @@ main {
         margin-left: 15% !important;
     }
 
+    .nav-bar-menu{
+        display: block;
+    }
+
     nav {
+        width: 50vw;
         position: absolute;
         height: 100vh;
         margin-left: -70%;
+        margin-top: 0;
+        padding-right: 1.5rem !important;
+        padding-left: 1.5rem !important;
     }
 
     .content {

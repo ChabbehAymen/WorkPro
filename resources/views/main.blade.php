@@ -36,8 +36,8 @@
                                                     @break
                                                 @endif
                                                 <img
-                                                    src="{{$collabors[$i]->profile_img !== 'unset'?asset("asset/imags/$collabors[$i]->profile_img"):asset('asset/imags/profile-img.png')}}"
-                                                    alt="" srcset="">
+                                                    src="{{$collabors[$i]->profile_img !== 'unset'?asset($collabors[$i]->profile_img):asset('asset/imags/profile-img.png')}}"
+                                                    class="w-8 h-8 rounded-full" >
                                             @endfor
                                         </button>
                                     @endif
@@ -47,8 +47,8 @@
                                             <li class="flex mb-2 py-2 border-b gap-2 items-center collabor-row">
                                                 <div class="flex w-full gap-2 items-center">
                                                     <img
-                                                        src="{{$projectCreator->profile_img !== 'unset'?asset("asset/imags/$projectCreator->profile_img"):asset('asset/imags/profile-img.png')}}"
-                                                        alt="" srcset="">
+                                                        src="{{$projectCreator->profile_img !== 'unset'?asset($projectCreator->profile_img):asset('asset/imags/profile-img.png')}}"
+                                                        class="w-6 h-6 rounded-full">
                                                     <h1 class="w-4/5 overflow-hidden text-ellipsis">{{$projectCreator->user_name}}</h1>
                                                     <img width="20" height="20" src="https://img.icons8.com/material-two-tone/24/army-star.png" alt="army-star"/>
                                                 </div>
@@ -58,8 +58,8 @@
                                                 <li class="flex mb-2 py-2 border-b gap-2 items-center collabor-row">
                                                     <div class="flex w-full gap-2 items-center">
                                                         <img
-                                                            src="{{$collabor->profile_img !== 'unset'?asset("asset/imags/$collabor->profile_img"):asset('asset/imags/profile-img.png')}}"
-                                                            alt="" srcset="">
+                                                            src="{{$collabor->profile_img !== 'unset'?asset($collabor->profile_img):asset('asset/imags/profile-img.png')}}"
+                                                            class="w-6 h-6 rounded-full">
                                                         <h1 class="w-4/5 overflow-hidden text-ellipsis">{{$collabor->user_name}}</h1>
                                                     </div>
                                                     @if($project->user_id === Auth::id())

@@ -19,7 +19,7 @@
                 <form class="w-full h-full flex gap-2 relative" method="post" action="{{route('task.create', [$id])}}" enctype="multipart/form-data">
                     @csrf
                     <input type="text" name="description" hidden="hidden">
-                    <div class="h-96 w-full mr-3">
+                    <div class=" w-full mr-3">
                         <input class="form-control border font-bold text-lg mb-3" name="title" placeholder="Title">
                         <h1 class="mb-2">Description</h1>
                         <div class="w-full" id="editor"></div>

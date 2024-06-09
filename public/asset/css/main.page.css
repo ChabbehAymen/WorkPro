@@ -47,6 +47,9 @@ main {
     width: 30vw;
     margin-left: 40vw;
 }
+.user-profile-img{
+    border-radius: 50%;
+}
 @media screen and (max-width: 975px) {
     main {
         .content {
