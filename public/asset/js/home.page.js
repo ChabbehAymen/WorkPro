@@ -22,7 +22,7 @@ $('#cancel-popup').click(event=>{
     hideCreateProjectPopup()
 })
 
-$('input').on('input', event =>{
+$('.search-div input').on('input', event =>{
     const projectsCards = $('.project-card');
     const inputValue = event.target.value.toLowerCase();
     projectsCards.each(function() {

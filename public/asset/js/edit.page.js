@@ -48,7 +48,7 @@ function endablEditor() {
     titleInput.prop("disabled", false);
     $(".ql-toolbar").css("pointer-events", "all");
     quill.enable();
-    $("button").css("display", "block");
+    $(".submit-btn").css("display", "block");
     $('.edit-pen').addClass('fa-x').removeClass('fa-pen');
 }
 
@@ -56,6 +56,6 @@ function disableEditor() {
     titleInput.prop("disabled", true);
     $(".ql-toolbar").css("pointer-events", "none");
     quill.disable();
-    $("button").css("display", "none");
+    $(".submit-btn").css("display", "none");
     $('.edit-pen').addClass('fa-pen').removeClass('fa-x');
 }

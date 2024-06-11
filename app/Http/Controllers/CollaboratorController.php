@@ -34,4 +34,8 @@ class CollaboratorController extends Controller
         $this->collabsRepo->delete(['user_id'=>$userId, 'project_id'=>$projectId]);
         return back()->with('success', 'Collaborator Have Ben Kicked');
     }
+
+    public function find($userId, $projectId){
+        return $this->collabsRepo->find(['userId'=>$userId, 'projectId'=>$projectId]);
+    }
 }

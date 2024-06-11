@@ -26,6 +26,7 @@ class NavBar extends Component
         $this->projects = Auth::user()->projects;
         $this->collabs = $this->collaboratorController->get();
     }
+    
     public function render()
     {
         return view('livewire.nav-bar');

@@ -23,11 +23,11 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::group(['prefix' => '/project/{project_id}'], function () {
-        Route::get('/invite/{user_id}', [InvitationsController::class, 'create'])->name('create.invitation');
-        Route::delete('/revoke/{user_id}', [InvitationsController::class, 'delete'])->name('delete.invitation');
-        Route::post('/collaborate/{user_id}',[CollaboratorController::class, 'create'])->name('create.collaborator');
-        Route::delete('/quite/{user_id}', [CollaboratorController::class,'delete'])->name('delete.collaboration');
-        Route::get('/createTask', function (string $id){
+        Route::post('/invite/{user_id}', [InvitationsController::class, 'create'])->name('create.invitation');
+        Route::post('/revoke/{user_id}', [InvitationsController::class, 'delete'])->name('delete.invitation');
+        Route::post('/collaborate/{user_id}', [CollaboratorController::class, 'create'])->name('create.collaborator');
+        Route::post('/quite/{user_id}', [CollaboratorController::class, 'delete'])->name('delete.collaboration');
+        Route::get('/createTask', function (string $id) {
             return view('createTask', compact('id'));
         })->name('create.task');
         Route::post('/postTask', [TaskController::class, 'store'])->name('task.create');

@@ -23,7 +23,7 @@
         </div>
         <input type="text" value="{{$data->description}}" name="description" hidden>
         <div class="w-full" id="editor"></div>
-        <button type="submit" class="btn bg-black text-white w-max self-end">Post</button>
+        <button type="submit" class="btn bg-black text-white w-max self-end submit-btn">Post</button>
     </form>
 </main>
 

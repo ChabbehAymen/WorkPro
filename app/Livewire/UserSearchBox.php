@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Http\Controllers\CollaboratorController;
 use App\Http\Controllers\InvitationsController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,7 @@ class UserSearchBox extends Component
 
     public function __construct()
     {
-
+        
     }
 
     public function mount(){
