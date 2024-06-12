@@ -16,14 +16,14 @@
                     <form action="{{route('task.update.state', [$task_id])}}" method="post">
                         @csrf
                         <input value="1" name="status" hidden="hidden">
-                        <input type="submit" class="btn w-full border-0 text-start hover:bg-gray-200" value="Send To  Doing It">
+                        <input type="submit" class="btn w-full border-0 text-start hover:bg-gray-200" value="In Progress">
                     </form>
                 </li>
                 <li>
                     <form action="{{route('task.update.state', [$task_id])}}" method="post">
                         @csrf
                         <input value="2" name="status" hidden="hidden">
-                        <input type="submit" class="btn w-full border-0 text-start hover:bg-gray-200" value="Complete It">
+                        <input type="submit" class="btn w-full border-0 text-start hover:bg-gray-200" value="Completed">
                     </form>
                 </li>
                 @elseif (intval($state) === 1)
@@ -31,14 +31,14 @@
                     <form action="{{route('task.update.state', [$task_id])}}" method="post">
                         @csrf
                         <input value="0" name="status" hidden="hidden">
-                        <input type="submit" class="btn w-full border-0 text-start hover:bg-gray-200" value="Send To  To Do">
+                        <input type="submit" class="btn w-full border-0 text-start hover:bg-gray-200" value="Not Started">
                     </form>
                 </li>
                 <li>
                     <form action="{{route('task.update.state', [$task_id])}}" method="post">
                         @csrf
                         <input value="2" name="status" hidden="hidden">
-                        <input type="submit" class="btn w-full border-0 text-start hover:bg-gray-200" value="Complete It">
+                        <input type="submit" class="btn w-full border-0 text-start hover:bg-gray-200" value="Completed">
                     </form>
                 </li>
                 @elseif (intval($state) === 2)
@@ -46,14 +46,14 @@
                     <form action="{{route('task.update.state', [$task_id])}}" method="post">
                         @csrf
                         <input value="0" name="status" hidden="hidden">
-                        <input type="submit" class="btn w-full border-0 text-start hover:bg-gray-200" value=" Send To To Do">
+                        <input type="submit" class="btn w-full border-0 text-start hover:bg-gray-200" value="Not Started">
                     </form>
                 </li>
                 <li>
                     <form action="{{route('task.update.state', [$task_id])}}" method="post">
                         @csrf
                         <input value="1" name="status" hidden="hidden">
-                        <input type="submit" class="btn w-full border-0 text-start hover:bg-gray-200" value="Still Doing It">
+                        <input type="submit" class="btn w-full border-0 text-start hover:bg-gray-200" value="In Progress">
                     </form>
                 </li>
                 @endif

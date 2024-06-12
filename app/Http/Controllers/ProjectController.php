@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Invetation;
 use App\Models\User;
 use App\Repositories\UserRrepository;
 use Illuminate\Http\RedirectResponse;
@@ -9,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\Colobrator;
 use App\Models\Project;
 use App\Repositories\CollaborationsRepo;
+use App\Repositories\InvetationsRepo;
 use App\Repositories\ProjectRepository;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
@@ -18,6 +20,7 @@ class ProjectController extends Controller
 {
     protected CollaborationsRepo $collaborationsRepo;
     protected ProjectRepository $projectsRepo;
+    protected InvetationsRepo $invitationsRepo;
 
     protected $usersRepo;
     public function __construct()
@@ -25,6 +28,7 @@ class ProjectController extends Controller
         $this->projectsRepo = new ProjectRepository(new Project());
         $this->collaborationsRepo = new CollaborationsRepo(new Colobrator());
         $this->usersRepo = new UserRrepository(new User());
+        $this->invitationsRepo = new InvetationsRepo(new Invetation());
     }
 
     public function show(): view
@@ -56,8 +60,19 @@ class ProjectController extends Controller
     }
 
     public function destroy(Request $request, $id){
+
+        $this->deleteInvitations($id);
+        $this->deleteCollabos($id);
         $this->projectsRepo->delete($id);
         return back();
+    }
+
+    public function deleteInvitations($projectId){
+        $this->invitationsRepo->deleteWithProject($projectId);
+    }
+
+    public function deleteCollabos($projectId){
+        $this->collaborationsRepo->deleteWithProject($projectId);
     }
 
     public function getUserProjects(): Collection|array

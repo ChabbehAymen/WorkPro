@@ -29,10 +29,12 @@ $("#cancel-btn").click(function (e) {
 });
 $(".edit-password").click(function (e) {
     if (!onEditPassword) {
+        $("input[name=password]").val('');
         $(".edit-password-input").css("display", "block");
         $(".edit-password").text("cancel");
         onEditPassword = !onEditPassword;
     } else {
+        $("input[name=password]").val('******');
         $(".edit-password-input").css("display", "none");
         $(".edit-password").text("edit password");
         onEditPassword = !onEditPassword;

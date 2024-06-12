@@ -25,7 +25,7 @@
                                            id="email" name="email" required>
                                     <label for="">Password</label>
                                     <div class="border border-black rounded mb-2">
-                                        <input type="text" placeholder="Enter your Password" class="rounded p-2"
+                                        <input type="password" placeholder="Enter your Password" class="rounded p-2 w-full"
                                                name="password"
                                                required>
                                     </div>
@@ -50,7 +50,7 @@
                                            required>
                                     <label for="">Password</label>
                                     <div class="border border-black rounded">
-                                        <input type="text" placeholder="Enter your Password" class="rounded p-2"
+                                        <input type="password" placeholder="Enter your Password" class="rounded p-2 w-full"
                                                name="password"
                                                required>
                                     </div>

@@ -24,6 +24,12 @@ class CollaborationsRepo extends BaseRepo
             ->delete();
     }
 
+    public function deleteWithProject($projectId){
+        return $this->model->query()
+            ->where('project_id', '=', $projectId)
+            ->delete();
+    }
+
     public function find($params)
     {
         return $this->model::query()

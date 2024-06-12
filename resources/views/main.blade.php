@@ -14,7 +14,7 @@
         <main class=" h-full w-full pt-2.5 flex">
             <livewire:nav-bar selectedID="{{$project->id}}"></livewire:nav-bar>
             <div class="px-4 content">
-                <livewire:header addIcon="https://img.icons8.com/material-two-tone/24/insert-row-below.png"></livewire:header>
+                <livewire:header addIcon="https://img.icons8.com/material-two-tone/24/insert-row-below.png" projectCreator="{{$project->user_id}}"></livewire:header>
                 <script>
                     $('#create-icon').click(event => {
                         location.href = 'http://127.0.0.1:8000/project/{{$project->id}}/createTask';

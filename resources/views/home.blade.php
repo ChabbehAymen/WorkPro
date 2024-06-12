@@ -30,7 +30,7 @@
             @if(sizeof($collaborations) > 0 )
                 <div>
                     <h1 class="font-bold text-lg">Sheared With Me</h1>
-                    <div class="flex flex-wrap w-full h-max">
+                    <div class="flex flex-wrap gap-3 w-full h-max">
                         @foreach($collaborations as $project)
                             <livewire:project-card title="{{$project->title}}"
                                                    id="{{$project->id}}" isShared="1"></livewire:project-card>

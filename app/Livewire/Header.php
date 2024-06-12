@@ -20,6 +20,8 @@ class Header extends Component
 
     public $notifications;
 
+    public $projectCreator = 0;
+
     private InvitationsController $invitationsController;
 
     public function __construct()

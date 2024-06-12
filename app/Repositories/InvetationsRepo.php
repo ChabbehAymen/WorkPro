@@ -34,4 +34,10 @@ class InvetationsRepo extends BaseRepo
             ->delete();
     }
 
+    public function deleteWithProject($id){
+        return $this->model->query()
+            ->where('project_id', '=', $id)
+            ->delete();
+    }
+
 }

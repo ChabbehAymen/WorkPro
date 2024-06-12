@@ -8,10 +8,12 @@
         <input type="text" class="bg-transparent w-full search-input tasks-search-input" placeholder="Search">
     </div>
     <div class="flex gap-2 items-center">
+        @if ($projectCreator == auth()->id() || $projectCreator == 0)
         <button>
             <img width="20" height="20" src="{{$addIcon}}" alt="insert-row-below" class="opacity-70" id="create-icon" />
         </button>
         <div class="w-1 h-5 bg-gray-200 rounded-2xl spacer"></div>
+        @endif
         <div class="dropdown w-max">
             <button class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <img width="20" height="20" src="https://img.icons8.com/material-two-tone/24/bell--v1.png" alt="bell--v1" class="opacity-70" />
