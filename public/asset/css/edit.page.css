@@ -50,3 +50,7 @@ main{
     display: none;
 }
 
+.back-btn{
+    margin-bottom: 5vw;
+    margin-right: 5vh;
+}
