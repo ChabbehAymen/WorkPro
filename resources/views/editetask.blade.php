@@ -25,7 +25,7 @@
         <div class="w-full" id="editor"></div>
         <button type="submit" class="btn bg-black text-white w-max self-end submit-btn">Post</button>
     </form>
-    <a href="{{route('main', [$data->project_id])}}" class="btn shadow w-fit absolute right-0 bottom-0 back-btn" ><i class="fa fa-arrow-left">&ThickSpace;</i>back</a>
+    <a href="{{route('main', [$data->project_id])}}" class="btn shadow w-fit fixed right-0 bottom-0 back-btn" ><i class="fa fa-arrow-left">&ThickSpace;</i>back</a>
 </main>
 
 @endsection
