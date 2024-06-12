@@ -57,12 +57,12 @@ class UserController extends Controller
             'password'=>'sometimes|min:6'
         ]);
         if($data['password'] === '******') unset($data['password']);
-        if (in_array('profile_img',$data) && Auth::user()->profile_img === 'unset' && $this->validPassword($data['old_password'])) {
+        if (!empty($data['profile_img']) && Auth::user()->profile_img === 'unset' && $this->validPassword($data['old_password'])) {
             $photo = $request->file('profile_img');
             $fileName = str_replace(' ', '', Auth::user()->user_name).'profile_img.'.$photo->getClientOriginalExtension();
             $photo->move(public_path('asset/imags'), $fileName);
             $data['profile_img'] = 'asset/imags/' . $fileName;
-        }else if(in_array('profile_img',$data) && Auth::user()->profile_img !== 'unset' && $this->validPassword($data['old_password'])){
+        }else if(!empty($data['profile_img']) && Auth::user()->profile_img !== 'unset' && $this->validPassword($data['old_password'])){
             $photo = $request->file('profile_img');
             $fileName = str_replace(' ', '', Auth::user()->user_name).'profile_img.'.$photo->getClientOriginalExtension();
             $photo->move(public_path('asset/imags'), $fileName);
