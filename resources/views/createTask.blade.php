@@ -10,12 +10,12 @@
         <livewire:dialog message="{{$errors->createTask->first()}}">
             @endif
 
-    <main class=" h-full w-full pt-2.5 flex overflow-hidden">
+    <main class=" h-fit w-full pt-2.5 flex overflow-hidden">
         <livewire:nav-bar selectedID="{{$id}}"></livewire:nav-bar>
         <div class="pl-4 w-full">
             <livewire:header
                 addIcon="https://img.icons8.com/material-two-tone/24/insert-row-below.png"></livewire:header>
-            <div class="flex h-max content">
+            <div class="flex h-full content">
                 <form class="w-full h-full flex gap-2 relative" method="post" action="{{route('task.create', [$id])}}" enctype="multipart/form-data">
                     @csrf
                     <input type="text" name="description" hidden="hidden">

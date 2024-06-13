@@ -65,7 +65,6 @@ form {
         height: max-content;
         flex-direction: column;
         .right-side-form{
-            height: 70vh;
             position:relative;
             margin-top: 0;
         }
